@@ -1,7 +1,3 @@
-https://leetcode.com/problems/reverse-integer/description/  
+https://leetcode.com/problems/palindrome-number/description/  
 
-Reverse digits of an integer.
-```
-Example1: x = 123, return 321
-Example2: x = -123, return -321
-```
+Determine whether an integer is a palindrome. Do this without extra space.
