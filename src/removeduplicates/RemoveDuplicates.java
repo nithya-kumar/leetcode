@@ -9,10 +9,13 @@ public class RemoveDuplicates {
 			System.out.println(nums[i]);
 	}
 	public static int removeDuplicates(int[] nums) {
-        int j = 0;
-        for (int i = 0; i < nums.length; i ++)
-        	if (nums[j] != nums[i])
-        		nums[++j] = nums[i];
-        return ++j;
+		int len = 0;
+    	for (int i = 1; i < nums.length; i ++) {
+        	if (nums[len] != nums[i]) {
+            	len ++;
+            	nums[len] = nums[i];
+        	}
+    	}
+    	return len + 1;
     }
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.PriorityQueue;
 
 public class TopKFrequent {
@@ -38,7 +39,7 @@ public class TopKFrequent {
         
         return list;
     }*/
-		Map<Integer, Integer> map = new HashMap<>();
+		/*Map<Integer, Integer> map = new HashMap<>();
         for(int n: nums){
             map.put(n, map.getOrDefault(n,0)+1);
         }
@@ -54,7 +55,25 @@ public class TopKFrequent {
             Map.Entry<Integer, Integer> entry = maxHeap.poll();
             res.add(entry.getKey());
         }
-        return res;
+        return res;*/
+	        Map<Integer, Integer> freqMap = new HashMap<>();
+	        for(int n: nums){
+	            freqMap.put(n, freqMap.getOrDefault(n, 0)+1);
+	        }
+	        
+	        List<Integer>[] bucket = new List[nums.length + 1];
+	        for (Entry<Integer, Integer> entry : freqMap.entrySet()) {
+	            if (bucket[entry.getValue()] == null) {
+	                bucket[entry.getValue()] = new ArrayList<Integer>();
+	            }
+	            bucket[entry.getValue()].add(entry.getKey());
+	        }
+	        List<Integer> res = new ArrayList<Integer>();
+	        for (int i = bucket.length - 1; i >= 0 && res.size() < k; i --) {
+	            if (bucket[i] != null) {
+	                res.addAll(bucket[i]);
+	            }
+	        }
+	        return res;
+	    }
     }
-
-}
