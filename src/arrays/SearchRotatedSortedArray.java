@@ -1,4 +1,4 @@
-package searchinrotatedsortedarray;
+package arrays;
 
 public class SearchRotatedSortedArray {
 

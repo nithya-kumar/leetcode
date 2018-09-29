@@ -1,4 +1,7 @@
-package twosum;
+/*
+ * https://leetcode.com/problems/two-sum
+ */
+package arrays;
 
 import java.util.HashMap;
 import java.util.Map;

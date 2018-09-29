@@ -1,4 +1,4 @@
-package removeelement;
+package arrays;
 
 public class RemoveElement {
 	public int removeElement(int[] nums, int val) {
